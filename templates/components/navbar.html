@@ -1,0 +1,54 @@
+{% load static %}
+<div class="wrap">
+    <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-md-3 mb-md-0 mb-4 d-flex align-items-center">
+                    <a class="navbar-brand" href="index.html"><img style="height: 100px;" src="{% static 'base_app/images/logo.png' %}"/></a>
+                </div>
+                <div class="col-md-7">
+                    <div class="row">
+                        <div class="col-md-8 mb-md-0 mb-3">
+                            <div class="top-wrap d-flex">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-location-arrow"></span></div>
+                                <div class="text"><span>Address</span><span>198 West 21th Street, Suite 721 New York NY 10016</span></div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="top-wrap d-flex">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-phone"></span></div>
+                                <div class="text"><span>Call us</span><span>(+01) 123 456 7890</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span> Menu
+      </button>
+      <div class="order-lg-last">
+        {% if request.user.is_authenticated %}
+          <a href="{% url 'dashboard' %}" class="btn btn-primary"> Dashboard </a>
+          <a href="{% url 'logout' %}" class="btn btn-primary"> Logout </a>
+        {% else %}
+
+      <a href="{% url 'login' %}" class="btn btn-primary">Login / Register</a>
+      {% endif %}
+    </div>
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>
+            <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+            <li class="nav-item"><a href="department.html" class="nav-link">Departments</a></li>
+            <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
